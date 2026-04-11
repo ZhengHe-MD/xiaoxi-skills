@@ -1,6 +1,6 @@
 ---
 name: openai-whisper
-description: "本地语音转文字（ whisper.cpp / whisper-cli，Metal GPU 加速）。当用户发送语音消息或要求语音转录时触发。"
+description: "本地语音转文字。当用户发送语音消息或要求语音转录时触发。"
 ---
 
 # Whisper.cpp (whisper-cli)
