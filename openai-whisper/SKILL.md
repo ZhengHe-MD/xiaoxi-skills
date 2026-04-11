@@ -1,6 +1,6 @@
 ---
 name: openai-whisper
-description: "Local speech-to-text with the Whisper CLI. Triggered when user sends a voice message or asks for transcription."
+description: "Local speech-to-text with the Whisper CLI."
 ---
 
 # Whisper.cpp (whisper-cli)
