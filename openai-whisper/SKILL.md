@@ -7,15 +7,6 @@ description: "本地语音转文字（ whisper.cpp / whisper-cli，Metal GPU 加
 
 使用 `whisper-cli` 将语音转录为文字，利用 Apple Silicon Metal GPU 加速（比纯 CPU 快 20-50 倍）。
 
-## 模型准备
-
-模型位于 `~/.local/share/whisper-cpp/models/ggml-medium.bin`，需要软链接到 whisper-cli 期望的位置：
-
-```bash
-mkdir -p ~/.cache/whisper
-ln -sf ~/.local/share/whisper-cpp/models/ggml-medium.bin ~/.cache/whisper/ggml-medium.bin
-```
-
 ## 使用方法
 
 ### Step 1：转换格式（如需要）
