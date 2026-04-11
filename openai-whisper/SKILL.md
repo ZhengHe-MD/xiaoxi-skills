@@ -5,7 +5,7 @@ description: "本地语音转文字。当用户发送语音消息或要求语音
 
 # Whisper.cpp (whisper-cli)
 
-使用 `whisper-cli` 将语音转录为文字，利用 Apple Silicon Metal GPU 加速（比纯 CPU 快 20-50 倍）。
+使用 `whisper-cli` 将语音转录为文字。
 
 ## 使用方法
 
@@ -23,24 +23,14 @@ ffmpeg -y -i /path/to/audio.ogg -ar 16000 -ac 1 -c:a pcm_s16le /tmp/voice_input.
 whisper-cli -m ~/.cache/whisper/ggml-medium.bin /tmp/voice_input.wav -otxt -of /tmp/transcript -l zh
 ```
 
-- `-m` 模型路径
-- 音频文件放最后（positional argument）
-- `-otxt` 输出纯文本
-- `-of` 输出文件路径（不带扩展名）
-- `-l zh` 指定中文，`-l auto` 自动检测语言
-
 ### Step 3：读取结果
 
 ```bash
 cat /tmp/transcript.txt
 ```
 
-## 常用参数
+## Notes
 
-| 参数 | 说明 |
-|---|---|
-| `-l <lang>` | 语言，如 `zh`、`en`、`auto` |
-| `-osrt` | 输出 SRT 字幕 |
-| `-ovtt` | 输出 VTT 字幕 |
-| `-oj` | 输出 JSON |
-| `-bo <n>` | beam size，默认 5 |
+- `-l zh` 指定语言，`-l auto` 自动检测
+- `-otxt` 输出纯文本，`-osrt` / `-ovtt` 输出字幕
+- ogg（opus 编码）需 ffmpeg 转 wav，whisper-cli 无法直接读取
